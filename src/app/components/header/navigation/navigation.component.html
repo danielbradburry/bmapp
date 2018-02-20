@@ -1,0 +1,13 @@
+<h1 class="show-for-medium">
+	<a routerLink="/"><img class="logo" src="assets/images/logo.jpg" /></a>
+    <a class="phone" href="tel:9729854747">(972) 985-4747</a>
+	<nav-links></nav-links>
+</h1>
+<h1 class="show-for-small-only mobile">
+    <a routerLink="/"><img class="logo" src="assets/images/logo.jpg" /></a>
+    <div id="mobileTrigger" (click)="toggleMenu()">
+        <hr /><hr /><hr />
+    </div>
+    <nav-links [ngClass]="{'open': open}"></nav-links>
+    <a class="phone" href="tel:9729854747">(972) 985-4747</a>
+</h1>

@@ -1,0 +1,20 @@
+@import "./vars";
+@import '~foundation-sites/scss/foundation';
+@include foundation-everything(false);
+
+body {
+	margin: 0;
+	padding: 0;
+    font-family: Arial;
+}
+
+@media print, screen and (max-width: 40em) {
+    body {
+        margin-top: 71px;
+    }
+    navigation {
+        h1 {
+            margin-top: -71px !important;
+        }
+    }
+}

@@ -1,0 +1,112 @@
+@import "~sass/vars";
+
+h1 {
+    position: relative;
+	background: $red;
+	color: $white;
+	margin-top: 0;
+    padding-left: 1rem;
+    margin-bottom: 0;
+    box-shadow: 0px 2px 4px $black;
+    .phone {
+        color: white;
+        font-size: 20px;
+        vertical-align: middle;
+        font-weight: 700;
+    }
+    .logo {
+        max-width: 200px;
+        padding: 4px;
+        background: $white;
+        border-radius: 10px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 6px;
+    }
+	ul {
+		float: right;
+		margin: 0 25px 0 0;
+        line-height: 1;
+		li {
+			display: inline;
+            a {
+                text-decoration: none;
+                color: inherit;
+                font-size: 16px;
+                padding: 25px;
+            }
+		}
+	}
+}
+
+.mobile {
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 2000;
+    .logo {
+        margin-top: 6px;
+        height: 42px;
+    }
+    nav-links {
+        position: absolute;
+        top: 71px;
+        width: 200px;
+        left: -200px;
+        background: $gray;
+        transition: all 1s ease 0s;
+        &.open {
+            left: 0;
+        }
+        ::ng-deep ul {
+            margin: 0;
+            float: none;
+            background: $gray;
+            line-height: 14px;
+            border-top: 2px solid $white;
+            border-right: 2px solid $white;
+            border-bottom: 2px solid $white;
+            li {
+                display: block;
+                padding: 10px;
+                & ~ li {
+                    border-top: 2px solid $white;
+                }
+            }
+        }
+    }
+    .phone {
+        font-size: 12px;
+        padding-bottom: 1px;
+        display: block;
+        width: 130px;
+        margin: 0 auto;
+    }
+    #mobileTrigger {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 34px;
+        height: 34px;
+        border: 2px solid $white;
+        border-radius: 4px;
+        cursor: pointer;
+        hr {
+            border: none;
+            height: 2px;
+            background: $white;
+            position: absolute;
+            width: 75%;
+            margin-left: 12.5%;
+            &:nth-child(1) {
+                top: -14px;
+            }
+            &:nth-child(2) {
+                top: -6px;
+            }
+            &:nth-child(3) {
+                top: 2px;
+            }
+        }
+    }
+}
