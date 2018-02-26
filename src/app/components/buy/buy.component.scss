@@ -1,0 +1,36 @@
+@import "~sass/vars";
+
+h1 {
+    margin-bottom: 30px;
+}
+.tabs {
+    border: 1px solid $gray;
+}
+.tab {
+    text-align: center;
+    width: 20%;
+    float: left;
+    cursor: pointer;
+    padding: 10px 0;
+    ~ .tab {
+        border-left: 1px solid $gray;
+    }
+    &.active {
+        background: $red;
+        color: $white;
+    }
+}
+::ng-deep h3 {
+    text-align: center;
+    margin-top: 20px;
+}
+::ng-deep .glossaryItem {
+    
+}
+::ng-deep .glossaryWord {
+    font-weight: 700;
+    text-decoration: underline;
+}
+::ng-deep .glossaryContent {
+    
+}

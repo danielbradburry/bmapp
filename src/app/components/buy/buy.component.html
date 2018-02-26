@@ -1,3 +1,12 @@
 <div class="row frame">
-    Buy Page
+    <h1>Buying A Home</h1>
+    <div class="row tabs">
+        <div *ngFor="let tab of content" class="tab" (click)="changeContent(tab)" [ngClass]="{'active': tab === active}">
+            {{tab.label}}
+        </div>
+    </div>
+    <div class="content">
+        <h3 [innerHTML]="active.heading"></h3>
+        <div [innerHTML]="active.content"></div>
+    </div>
 </div>
