@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ContentService {
+    page_one: page;
+    page_two: page;
+    page_three: page;
+    page_four: page;
+    page_five: page;
 
     constructor() { }
 
@@ -9,16 +14,41 @@ export class ContentService {
         this.page_one = {
             label: 'How We Work',
             heading: 'How We Work',
-            content: '<p>First-time buyers searched for about six weeks and saw 11 homes before making a decision. ' +
-            'Repeat buyers searched for eight weeks and looked at 12 homes before buying. ' +
-            'Seventy-six percent of buyers used a real estate agent during their search, and 90% of buyers used the Internet as part of their home search. ' +
-            'Who pays us to represent you? The Buyer and Buyer\'s agent go into contract to work with each other in a certain area, for a determined length of time, with fees to be paid by the Seller included in the price of the house. You get the benefit of representation without the cost of paying up front or directly. ' +
-            'We can provide you New Home information. We have information about the builders and where they are building. We can go into my New Home Search and view new homes searching for different criteria. We can even view the floorplan and information about a subdivision and about the builder.</p>'
+            content: '<h4>What The Magee Team Can Do For You!</h4>' +
+                '<p><span class="paragraphLead">We Are Buyer\'s Agents.</span> In Texas, there are 3 ways we can work as a Real Estate Broker: We can represent the Buyer, we can represent the Seller, or we can be an Intermediary (occuring only when we sell a Magee Realtors listing).</p>' +
+                '<p><span class="paragraphLead">We can show you any house.</span> Being a member of the Multiple Listing Service, we can show you any house listed in the MLS System. We can also show you a house that is For Sale By Owner. Any FSBO is usually willing to pay a Buyer\'s agent for bringing a qualified buyer! We can also sell you a new Builder\'s home. Remember that the Builder is not working for you but for himself. Therefore, you have no representation. The Realtor\'s fee is included, not in the price, but in the marketing program of the Builder.</p>' +
+                '<h4>Facts About How We Buy</h4>' +
+                '<p class="fact">First-time buyers searched for about six weeks and saw 11 homes before making a decision.</p>' +
+                '<p class="fact">Repeat buyers searched for eight weeks and looked at 12 homes before buying.</p>' +
+                '<p class="fact">Seventy-six percent of buyers used a real estate agent during their search, and 90% of buyers used the Internet as part of their home search.</p>' +
+                '<p><span class="paragraphLead">Who pays us to represent you?</span> The Buyer and Buyer\'s agent go into contract to work with each other in a certain area, for a determined length of time, with fees to be paid by the Seller included in the price of the house. You get the benefit of representation without the cost of paying up front or directly. ' +
+                '<p><span class="paragraphLead">We can provide you New Home information.</span> We have information about the builders and where they are building. We can go into my New Home Search and view new homes searching for different criteria. We can even view the floorplan and information about a subdivision and about the builder.</p>'
         };
         this.page_two = {
             label: 'Cash Needed',
             heading: 'Cash Needed Before Closing',
-            content: ''
+            content: '<div class="box">' +
+                '<table>' +
+                    '<tr><td>Credit Report</td><td>$75 - $100</td></tr>' +
+                    '<tr><td>Appraisal</td><td>$350 - $400</td></tr>' +
+                    '<tr><td>Inspection</td><td>$400 - $550</td></tr>' +
+                    '<tr><td>Termite</td><td>$90 - $125</td></tr>' +
+                    '<tr><td>Total</td><td>$915 Approximate</td></tr>' +
+                '</table>' +
+            '</div>' +
+            '<div class="box">' +
+                '<p>Money given up front when writing a contract that will be credited back at closing.</p>' +
+                '<table>' +
+                    '<tr><td>*Earnest Money</td><td>1% of Sales Price</td><td>Written to the Title Company</td></tr>' +
+                    '<tr><td>*Option Money</td><td>$100 - $250</td><td>Written to the Seller</td></tr>' +
+                '</table>' +
+            '</div>' +
+            '<div class="box">' +
+                '<p>* Definitions</p>' +
+                '<p><span class="tableTitle">Earnest Money</span>: Advance payment of part of the purchase price to bind a contract for property. The money is usually placed in escrow.</p>' +
+                '<p><span class="tableTitle">Option Money</span>: Money Buyer pays to Seller for the unrestricted right to terminate the contract within the time specified, the Option Money will not be refunded, however any Earnest Money will be refunded to the buyer.</p>' +
+                '<p><span class="tableTitle">Option Period</span>: Period of time specified in the contract in which the buyer has the unrestricted right to terminate, forfeiting the Option Money.</p>' +
+            '</div>'
         };
         this.page_three = {
             label: 'Making It Easier',
@@ -168,4 +198,11 @@ export class ContentService {
             this.page_five,
         ];
     }
+}
+
+
+interface page {
+    label: string;
+    heading: string;
+    content: string;
 }

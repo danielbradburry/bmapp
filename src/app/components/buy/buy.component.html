@@ -1,5 +1,5 @@
+<h1 class="pageTitle">Buying A Home</h1>
 <div class="row frame">
-    <h1>Buying A Home</h1>
     <div class="row tabs">
         <div *ngFor="let tab of content" class="tab" (click)="changeContent(tab)" [ngClass]="{'active': tab === active}">
             {{tab.label}}

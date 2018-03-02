@@ -13,6 +13,7 @@ export class NavigationComponent implements OnInit {
     constructor(private router: Router) {
         router.events.subscribe( (event: Event) => {
             if (event instanceof NavigationStart) {
+                window.scrollTo(0, 0);
             }
 
             if (event instanceof NavigationEnd) {

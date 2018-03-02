@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
 
         this.items2 = [{
             name: "Our Listings",
-            source: "assets/images/kitchen.jpg",
+            source: "assets/images/listings.jpg",
             routerLink: "listings"
         }, {
             name: "Magee Newsletter",

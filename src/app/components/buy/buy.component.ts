@@ -9,13 +9,13 @@ import { ContentService } from 'app/services/buy/content.service';
 })
 export class BuyComponent implements OnInit {
 
-    tabs: tab[];
+    content: tab[];
+    active: tab;
 
     constructor(private contentService: ContentService) { }
 
     ngOnInit() {
         this.content = this.contentService.getContent();
-
         this.active = this.content[0];
     }
 
@@ -27,5 +27,6 @@ export class BuyComponent implements OnInit {
 
 interface tab {
     label: string;
+    heading: string;
     content: string;
 }

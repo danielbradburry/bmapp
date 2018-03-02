@@ -12,6 +12,9 @@ h1 {
     float: left;
     cursor: pointer;
     padding: 10px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     ~ .tab {
         border-left: 1px solid $gray;
     }
@@ -19,10 +22,6 @@ h1 {
         background: $red;
         color: $white;
     }
-}
-::ng-deep h3 {
-    text-align: center;
-    margin-top: 20px;
 }
 ::ng-deep .glossaryItem {
     
@@ -33,4 +32,37 @@ h1 {
 }
 ::ng-deep .glossaryContent {
     
+}
+::ng-deep .box {
+    border: 1px solid $black;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+::ng-deep table {
+    margin-bottom: 0;
+}
+::ng-deep .tableTitle {
+    font-weight: 700;
+    text-decoration: underline;
+}
+::ng-deep .fact {
+    font-style: italic;
+    font-weight: 700;
+}
+::ng-deep .paragraphLead {
+    font-style: italic;
+    color: $blue;
+}
+@media print, screen and (max-width: 40em) {
+    .tab {
+        width: 100%;
+        float: none;
+        ~ .tab {
+            border-left: 0;
+            border-top: 1px solid $gray;
+        }
+    }
+    .content {
+        font-size: 12px;
+    }
 }

@@ -1,0 +1,9 @@
+@import "~sass/vars";
+
+img {
+    display: block;
+    margin: 0 auto 30px;
+    &.border {
+        border: 3px solid $black;
+    }
+}

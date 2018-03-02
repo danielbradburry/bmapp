@@ -9,15 +9,15 @@
     </div>
 </div>
 <div class="dark-block">
-    <h1>A Random Title</h1>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <h1>Your Real Estate Consultants for Life!</h1>
+    <p>We commit ourselves to professionalism in our industry, teamwork within our organization, work to be leaders in the real estate industry and help our clients fulfill their Real Estate Goals.</p>
 </div>
 <div class="row sectional">
     <div *ngFor="let item of items2" class="small-12 medium-6 columns item">
         <a routerLink="{{item.routerLink}}">
             <div class="item-box" [ngStyle]="{'background-image':'url(' + item.source + ')'}">
+                <div>{{item.name}}</div>
             </div>
-            <div>{{item.name}}</div>
         </a>
     </div>
 </div>
