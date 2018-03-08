@@ -1,20 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/header/navigation/navigation.component';
-import { AboutComponent } from './components/about/about.component';
-import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/pages/about/about.component';
+import { HomeComponent } from './components/pages/home/home.component';
 import { NavLinksComponent } from './components/header/nav-links/nav-links.component';
-import { BuyComponent } from './components/buy/buy.component';
-import { SellComponent } from './components/sell/sell.component';
-import { NewhomeComponent } from './components/newhome/newhome.component';
-import { ListingsComponent } from './components/listings/listings.component';
-import { NewsletterComponent } from './components/newsletter/newsletter.component';
+import { BuyComponent } from './components/pages/buy/buy.component';
+import { SellComponent } from './components/pages/sell/sell.component';
+import { NewhomeComponent } from './components/pages/newhome/newhome.component';
+import { ListingsComponent } from './components/pages/listings/listings.component';
+import { NewsletterComponent } from './components/pages/newsletter/newsletter.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ContactComponent } from './components/pages/contact/contact.component';
 
 const appRoutes: Routes = [{
     path: '', 
@@ -22,6 +23,9 @@ const appRoutes: Routes = [{
 }, {
     path: 'about', 
     component: AboutComponent
+}, {
+    path: 'contact', 
+    component: ContactComponent
 }, {
     path: 'buy', 
     component: BuyComponent
@@ -51,12 +55,13 @@ const appRoutes: Routes = [{
         NewhomeComponent,
         ListingsComponent,
         NewsletterComponent,
-        FooterComponent
+        FooterComponent,
+        ContactComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule,
+        HttpClientModule,
         RouterModule.forRoot(appRoutes)
     ],
     providers: [],

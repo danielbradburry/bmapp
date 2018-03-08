@@ -1,0 +1,10 @@
+<h1 class="pageTitle">Magee Realtors Newsletters</h1>
+<div class="row frame">
+    <div *ngFor="let item of newsletters">
+        <h3>{{item.year}}</h3>
+        <div *ngFor="let newsletter of item.newsletters">
+            <a href="http://mageerealtors.com/newsletters/{{newsletter.file}}.pdf" target="_blank">{{newsletter.name}}</a>
+        </div>
+    </div>
+    <p *ngIf="!newsletters.length">No Newsletters</p>
+</div>

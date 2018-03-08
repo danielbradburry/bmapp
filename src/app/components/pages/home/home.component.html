@@ -1,4 +1,11 @@
-<div class="sectional hero" [ngStyle]="{'background-image':'url(' + hero + ')'}"></div>
+<div class="sectional heroContainer">
+    <div class="heroCTA">
+        <div>MAGEE REALTORS</div>
+        <div class="sub">Serving the Dallas Metroplex since 1986</div>
+    </div>
+    <div class="hero" [ngStyle]="{'background-image':'url(' + hero + ')'}"></div>
+    <div class="hero newHero" [ngClass]="{'phasing': animating}" [ngStyle]="{'background-image':'url(' + newHero + ')'}"></div>
+</div>
 <div class="row sectional">
     <div *ngFor="let item of items1" class="small-12 medium-4 columns item">
         <a routerLink="{{item.routerLink}}">

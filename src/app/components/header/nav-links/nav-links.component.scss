@@ -1,14 +1,163 @@
+@import "~sass/vars";
+
 ul {
     float: right;
     margin: 0 25px 0 0;
     line-height: 1;
     li {
-        display: inline;
+        display: inline-block;
         a {
             text-decoration: none;
             color: inherit;
             font-size: 16px;
             padding: 25px;
         }
+    }
+    .navlink {
+        position: relative;
+        font-size: 16px;
+        &.expandable {
+            padding-right: 30px;
+        }
+        cursor: pointer;
+        .sublink {
+            position: absolute;
+            display: none;
+            z-index: 30;
+            left: -10px;
+            top: 44px;
+            margin: 0;
+            background: $red;
+            width: calc(100% + 20px);
+            border: 1px solid $gray;
+            li {
+                display: block;
+                a {
+                    padding: 10px;
+                    display: block;
+                }
+                ~ li {
+                    border-top: 1px solid $gray;
+                }
+                &:hover {
+                    background: $white;
+                    color: $black;
+                }
+            }
+        }
+        .header.open {
+            + .sublink {
+                display: block;
+            }
+            .chevron {
+                transform: rotate(90deg);
+                right: -8px;
+            }
+        }
+    }
+}
+
+.chevron {
+    display:inline-block;
+    width: 10px;
+    height: 10px;
+    position:relative;
+    top: -2px;
+    right: -4px;
+    transition: all 0.25s ease 0s;
+}
+
+.chevron:before,
+.chevron:after {
+    display:block;
+    content:"";
+    width:0;
+    height:0em;
+    border-style:solid;
+    position:absolute;
+}
+.chevron:before {
+    right:0;
+    border-width:.4em 0 .4em .4em;
+    border-color:transparent transparent transparent $white;    
+}
+.chevron:after {
+    left:2px;
+    border-width:.4em 0 .4em .4em;
+    border-color:transparent transparent transparent $red;    
+}
+
+@media print, screen and (max-width: 63.9375em) {
+    ul {
+        li {
+            a {
+                font-size: 12px;
+            }
+        }
+        .navlink {
+            font-size: 12px;
+            &.expandable {
+                padding-right: 20px;
+            }
+        }
+    }
+    .chevron {
+        top: 1px;
+    }
+    .header.open {
+        .chevron {
+            top: -1px;
+        }
+    }
+    #navmenu {
+        .navlink.expandable {
+            .sublink {
+                left: -12px;
+                top: 37px;
+            }
+        }
+    }
+}
+
+@media print, screen and (max-width: 39.9375em) {
+    #navmenu {
+        box-shadow: 2px 2px 4px $black;
+        background: $red;
+        .navlink {
+            &.expandable {
+                padding: 0;
+                .header {
+                    display: block;
+                    background: $black;
+                    padding: 6px;
+                    border-bottom: 2px solid $white;
+                    font-size: 14px;
+                    color: $gray;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+                .sublink {
+                    width: calc(100% + 10px);
+                    background: $gray;
+                    position: relative;
+                    display: block;
+                    top: auto;
+                    left: -10px;
+                    background: $red;
+                    li {
+                        ~ li {
+                            border-top: 2px solid $white;
+                        }
+                    }
+                }
+            }
+            a {
+                display: block;
+                padding: 10px;
+            }
+        }
+    }
+    .chevron {
+        display: none;
     }
 }

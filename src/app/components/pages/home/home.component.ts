@@ -9,12 +9,27 @@ export class HomeComponent implements OnInit {
 
     items1: link[];
     items2: link[];
+    heroes: string[];
     hero: string;
+    newHero: string;
+    animating: boolean;
+    currentHero: number;
 
     constructor() { }
 
     ngOnInit() {
-        this.hero = 'assets/images/lakefront.jpg';
+        let currentHero = 2,
+            animateTimer = 6000;
+
+        this.heroes = [
+            'assets/images/hero1.jpg',
+            'assets/images/hero2.jpg',
+            'assets/images/hero3.jpg'
+        ];
+
+        this.hero = this.heroes[1];
+        this.newHero = this.heroes[0];
+        this.animating = false;
 
         this.items1 = [{
             name: "Buy",
@@ -36,9 +51,25 @@ export class HomeComponent implements OnInit {
             routerLink: "listings"
         }, {
             name: "Magee Newsletter",
-            source: "assets/images/bedroom.jpg",
+            source: "assets/images/newsletter.jpg",
             routerLink: "newsletter"
         }];
+
+        setInterval(()=>{
+            this.animateHero(this.heroes[currentHero]);
+            currentHero = currentHero === (this.heroes.length - 1) ? 0 : (currentHero + 1);
+        }, animateTimer);
+    }
+
+    animateHero(newHero) {
+        this.animating = true;
+        setTimeout(()=> {
+            this.newHero = this.hero;
+            this.animating = false;
+        }, 1000);
+        setTimeout(()=> {
+            this.hero = newHero;
+        }, 2000);
     }
 }
 

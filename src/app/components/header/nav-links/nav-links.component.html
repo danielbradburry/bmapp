@@ -1,3 +1,11 @@
-<ul>
-    <li *ngFor="let link of links"><a routerLink="{{link.routerLink}}">{{link.label}}</a></li>
+<ul id="navmenu">
+    <li *ngFor="let link of links" class="navlink" [ngClass]="{'expandable': link.links}">
+        <a *ngIf="link.routerLink" routerLink="{{link.routerLink}}">{{link.label}}</a>
+        <span *ngIf="link.links" (click)="toggleOpen(link)" class="header" [ngClass]="{'open': link.open}">{{link.label}}<i class="chevron"></i></span>
+        <ul *ngIf="link.links" class="sublink">
+            <li *ngFor="let groupLink of link.links">
+                <a routerLink="{{groupLink.routerLink}}">{{groupLink.label}}</a>
+            </li>
+        </ul>
+    </li>
 </ul>
